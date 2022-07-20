@@ -1,9 +1,3 @@
-# Starting the Project:
-
-1- Open the directory using the terminal <br />
-2- run "npm install" <br />
-3- run "npm start" <br />
-
 # App description:
 My Reads is a React Project that allows the user to manage their list of books in different categories while being able to add new books via search, remove books, or move books to other lists.
 
