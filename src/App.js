@@ -105,7 +105,6 @@ function AddBookPage({bookLists,handle})
 //Main App component
 function App() {
 
-
   //State of object that contains all book lists
   const [bookLists,setBookLists] = useState([]);
 
