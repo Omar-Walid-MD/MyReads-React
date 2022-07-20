@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Book from "./Book"
-import * as BooksAPI from './BooksAPI';
 
 
 function SearchResults({bookResults,bookLists,handle,searchValue})
