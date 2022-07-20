@@ -85,11 +85,11 @@ function AddBookPage({bookLists,handle})
       <section className="page-container">
         <div className="search-container">
           <Link to="/" className="link">
-              <img src={back} alt="Back Arrow" className="link-icon"/>
+              <img src={back} alt="Back Arrow" className="link-icon back-button"/>
           </Link>
-          <input className="search-bar" type="text" placeholder="Search by title or author" value={searchValue} onChange={handleSearchValue} />
+          <input className="search-bar" type="text" placeholder="Search by title" value={searchValue} onChange={handleSearchValue} />
         </div>
-        <SearchResults bookResults={books} bookLists={bookLists} handle={handle} />
+        <SearchResults bookResults={books} bookLists={bookLists} handle={handle} searchValue={searchValue} />
       </section>
     </div>
   )

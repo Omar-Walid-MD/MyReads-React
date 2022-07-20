@@ -70,7 +70,7 @@
 }
 .book-cover
 {
-  height: 250px;
+  height: 250px; max-width: 200px;
   box-shadow: 0 5px 10px grey;
 }
 .book-title
@@ -186,7 +186,10 @@
   right: 50px;
 }
 
-
+.back-button
+{
+  margin: 0 20px;
+}
 /* SEARCH PAGE */
 .search-container
 {
@@ -220,10 +223,20 @@
 {
   color: grey;
 }
-.results
+.results-container
+{
+  max-width: 100%; height: auto;
+
+  display: flex;
+  justify-content: center; align-items: center;
+
+  margin-top: 50px;
+}
+.book-results
 {
   max-width: 100%; height: auto;
 
   display: grid;
   grid-template-columns: repeat(5,20%);
+
 }
