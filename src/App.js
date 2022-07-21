@@ -8,6 +8,7 @@ import * as BooksAPI from './BooksAPI';
 import { useEffect, useState } from 'react';
 import SearchResults from './SearchResults';
 import PropTypes from "prop-types";
+import BookDetails from './BookDetails';
 
 
 
@@ -16,6 +17,13 @@ import PropTypes from "prop-types";
 //Page that displays three categories of added books
 function BookShelfPage({bookLists,handle})
 {
+
+  const [bookDisplayed,setBookDisplayed] = useState(null);
+
+  function displayBook(book)
+  {
+    setBookDisplayed(book)
+  }
 
   return (
     <div className="App">
@@ -27,19 +35,20 @@ function BookShelfPage({bookLists,handle})
       <section className="page-container">
         <h1 className="shelf-title">Currently Reading</h1>
         <hr/>
-          <BookShelf allBooks={bookLists} handle={handle} category={"currentlyReading"} />
+          <BookShelf allBooks={bookLists} handle={handle} category={"currentlyReading"} selectBook={displayBook} />
         <h1 className="shelf-title">Want to Read</h1>
         <hr/>      
-          <BookShelf allBooks={bookLists} handle={handle} category={"wantToRead"} />
+          <BookShelf allBooks={bookLists} handle={handle} category={"wantToRead"} selectBook={displayBook} />
         <h1 className="shelf-title">Read</h1>
         <hr/>
-          <BookShelf allBooks={bookLists} handle={handle} category={"read"} />
+          <BookShelf allBooks={bookLists} handle={handle} category={"read"} selectBook={displayBook} />
       </section>
       <div className="circle add-book-button">
         <Link to="/add" className="link">
           <img src={add} alt="Add Book" className="link-icon" />
         </Link>
       </div>
+      <BookDetails book={bookDisplayed} selectBook={displayBook} />
     </div>
   
   );
