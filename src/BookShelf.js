@@ -5,16 +5,16 @@ import PropTypes from "prop-types";
 
 
 //BookShelf component that displays books of a given category
-function BookShelf({allBooks,category,handle})
+function BookShelf({allBooks,category,handle,selectBook})
 {
     const books = allBooks[category]
     return (
         <div className="shelf-container">
                 {
                     books!=null && books.length > 0 ?
-                        <div className="book-shelf"> 
+                        <div className="book-shelf" category={category}> 
                         {
-                            books.map((book)=><Book key={book.id} book={book} handle={handle} currentShelf={category} />)
+                            books.map((book)=><Book key={book.id} book={book} handle={handle} currentShelf={category} selectBook={selectBook} />)
                         }
                         </div>
 
