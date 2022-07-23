@@ -84,6 +84,14 @@ function AddBookPage({bookLists,handle})
     getBooks();
   },[searchValue]);
 
+
+  const [bookDisplayed,setBookDisplayed] = useState(null);
+
+  function displayBook(book)
+  {
+    setBookDisplayed(book)
+  }
+
   return (
     <div className="App">
 
@@ -98,8 +106,9 @@ function AddBookPage({bookLists,handle})
           </Link>
           <input className="search-bar" type="text" placeholder="Search by title" value={searchValue} onChange={handleSearchValue} />
         </div>
-        <SearchResults bookResults={books} bookLists={bookLists} handle={handle} searchValue={searchValue} />
+        <SearchResults bookResults={books} bookLists={bookLists} handle={handle} searchValue={searchValue} selectBook={displayBook}/>
       </section>
+      <BookDetails book={bookDisplayed} selectBook={displayBook} />
     </div>
   )
 }

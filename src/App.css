@@ -109,6 +109,8 @@
   color: white;
   font-size: 20pt;
 
+  box-shadow: 0 5px 10px grey;
+
 }
 .edit-book-button
 {
@@ -268,12 +270,6 @@
   height: 75%; width: 75%;
   
 }
-.book-details
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; align-items: center;
-}
 .open-book-details
 {
   opacity: 0;
@@ -286,4 +282,118 @@
   bottom: 10px; right: 10px;
 
   height: 30px; width: 30px;
+}
+
+
+/* BOOK DETAILS TAB */
+.book-details
+{
+  height: 100%; width: 100%;
+  
+  display: block;
+
+  /* flex-direction: column;
+  justify-content: space-between; */
+
+}
+.book-details-header
+{
+  text-align: left;
+  line-height: 30pt;
+  padding: 20px;
+}
+.book-details-header > *
+{
+  margin: 0;
+}
+.book-details-header > h2
+{
+  color: dimgrey;
+}
+.book-info
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; align-items: flex-start;
+}
+.book-info-right
+{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  border-right: solid 2px black;
+}
+.book-info-cover
+{
+  width: 100%;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center; align-items: center;
+}
+.book-info-cover-image
+{
+  height: 200px;
+  box-shadow: 0 5px 15px rgb(70, 70, 70);
+}
+.book-info-left
+{
+  height: 100; width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+}
+.book-info-desc
+{
+  
+  max-height: 200px; max-width: 1200px;
+
+  padding: 20px;
+
+  overflow-y: scroll;
+
+  border: inset 5px rgb(226, 226, 226);
+  box-shadow: inset 0 0 10px grey;
+
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.book-info-desc::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.book-info-desc {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.book-info-links
+{
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+.book-link
+{
+  color: black;
+  text-decoration: none;
+
+  padding: 5px 15px;
+  margin: 0 10px;
+
+  border: outset 5px lightgrey;
+}
+.book-link:first-child
+{
+  margin: 0;
+}
+.book-link:hover
+{
+  background-color: lightgrey;
 }

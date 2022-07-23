@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Book from "./Book"
 
 
-function SearchResults({bookResults,bookLists,handle,searchValue})
+function SearchResults({bookResults,bookLists,handle,searchValue,selectBook})
 {
     //Finding if a book in the search results has a copy in one of the bookshelves and returning that bookshelf
     function getShelf(bookResult)
@@ -29,7 +29,7 @@ function SearchResults({bookResults,bookLists,handle,searchValue})
              (bookResults != null && bookResults.length != undefined)
              ? <div className="book-results">
                  {
-                    bookResults.map((book)=><Book key={book.id} book={book} currentShelf={getShelf(book)} handle={handle}/>)
+                    bookResults.map((book)=><Book key={book.id} book={book} currentShelf={getShelf(book)} handle={handle} selectBook={selectBook}/>)
                  }
              </div>
              : bookResults != null && <h1>No results found for "{searchValue}"</h1>
